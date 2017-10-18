@@ -9,24 +9,25 @@ public class Main {
         Random rand=new Random();
         int computerChoice=rand.nextInt(100);
         int tries=1;
-        //System.out.println(computerChoice);
+        System.out.println(computerChoice);
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter your guess from 0 to 100!");
         int guess=scanner.nextInt();
     while(guess!=computerChoice){
+
         int guess2=guess;
-        if (guess==computerChoice){
+        if(guess>100){
+            System.out.println("What's wrong with you? I said from 0 to 100!");
+        }
+        else if (guess==computerChoice){
             System.out.println("About time you got it!");
         }
         else if(guess<computerChoice){
             System.out.println("Too small. Try again!");
         }
-        else if(guess>computerChoice){
+        else {
             System.out.println("Too large. Try again!");
         }
-        /*else if(guess>100){
-            System.out.println("What's wrong with you? I said from 0 to 100!");
-        }*/
         System.out.println("Enter your guess from 0 to 100!");
         guess=scanner.nextInt();
         if (guess!=guess2){
