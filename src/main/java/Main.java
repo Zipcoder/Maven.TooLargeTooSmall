@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args){
 
 
-        System.out.println("I'm thinking of a number between 0 and 100");
+        System.out.println("I'm thinking of a number between 0 and 100 (inclusive)");
 
-        int myNum = (int)(Math.random()*100);
+        int myNum = (int)(Math.random()*101);
         //System.out.println(myNum);
 
         Scanner scan = new Scanner(System.in);
