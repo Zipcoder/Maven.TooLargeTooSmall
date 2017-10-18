@@ -62,6 +62,6 @@ public class Main {
             lastUserGuess=currentUserGuess;
 
         }while (currentUserGuess!=mysteryIntToGuess);
-
+        in.close();
     }
 }
