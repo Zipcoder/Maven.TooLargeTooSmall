@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
-
 public enum GuessResult {
+    same,
+    low,
+    high,
+    correct
 }
