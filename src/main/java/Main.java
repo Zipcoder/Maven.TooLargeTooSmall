@@ -27,13 +27,11 @@ public class Main {
         do {
             System.out.print("\nPick a number between 1 and "+maxInclusiveBound+", inclusive: ");
             currentUserGuess=in.nextInt();
-            totalGuesses++;
 
             if ( ! (currentUserGuess>=1 && currentUserGuess<=maxInclusiveBound))
             {
                 System.out.println("You'll never guess right if you don't follow the rules. This"+
                     " won't count against your guesses, rule-breaker!");
-                totalGuesses--;
                 continue;
             }
 
@@ -41,21 +39,23 @@ public class Main {
             {
                 System.out.println("Hey, you _just_ guessed that. Try another one. I won't"+
                         " count this guess.");
-                totalGuesses--;
                 continue;
             }
-
+5
             if (currentUserGuess==mysteryIntToGuess)
             {
+                totalGuesses++;
                 System.out.println("Nicely done! You got it! The mystery number was "+mysteryIntToGuess+
                     " and it took you "+totalGuesses+" tries before you guessed correctly!");
             }
             else if (currentUserGuess>mysteryIntToGuess)
                  {
+                     totalGuesses++;
                      System.out.println("Oh, sorry. Your guess is too big! Try again.");
                  }
                  else
                  {
+                     totalGuesses++;
                      System.out.println("Oh, sorry. Your guess is too small! Try again.");
                  }
 
