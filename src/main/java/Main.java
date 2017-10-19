@@ -3,23 +3,22 @@ import java.util.Random;
 
 /**
  * Created by iyasuwatts on 10/17/17.
+ * This code checks if a user input number is equal to randomly generated number
  */
 public class Main {
 
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
-        int input = 1;
-        int ans = rand.nextInt(10);
-        int[] check= new int [10] ;
-        int count =0;
-        int num =1;
-       for (int i = 0; i<11; i++) {
-            System.out.println("Please insert a number between 1 and 10? ");
-            input = scanner.nextInt();
-           check[i] = input;
+        int ans = rand.nextInt(10);   // generate random number between 0 -10
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please insert a number between 1 and 10? ");
+        int input = scanner.nextInt();  // save user input into input variable
+        int guess = 11;       // variable created to update the input variabe  inside the while looping
+        int count = 0;      // counts the number of guess
+
+        while (input != ans) {
 
             if (input > ans)
                 System.out.println("Your guess is greater than the answer");
@@ -30,22 +29,20 @@ public class Main {
             else if (input == ans)
                 System.out.println("You got it!");
 
+            else
 
-            if (check[i]!= check[num] )
-
-
-           // System.out.println("Please insert a number between 1 and 10? ");
-           // int ans2 = scanner.nextInt();
-
-            //System.out.println("Thank you for playing, you total guess was " + count);
+                System.out.println("Please insert a number between 1 and 10? ");
+                guess = scanner.nextInt();
 
 
-                count++;
-                num++;
+                if (input != guess) {
+                    count++;
+                    input = guess;
+                }
 
-            System.out.println("Guess " + count);
+            }
+            System.out.println("You got it!. The number is " + ans + ". The number of guess is " + count);
+
         }
 
     }
-
-}
