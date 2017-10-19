@@ -16,6 +16,7 @@ public class Main {
         System.out.println("Please insert a number between 1 and 10? ");
         int input = scanner.nextInt();  // save user input into input variable
         int guess = 11;       // variable created to update the input variabe  inside the while looping
+
         int count = 0;      // counts the number of guess
 
         while (input != ans) {
@@ -29,7 +30,6 @@ public class Main {
             else if (input == ans)
                 System.out.println("You got it!");
 
-            else
 
                 System.out.println("Please insert a number between 1 and 10? ");
                 guess = scanner.nextInt();
