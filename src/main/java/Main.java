@@ -33,6 +33,7 @@ public class Main {
                     System.out.println("Wrong! Too high, try again!");
                     break;
                 case correct:
+                    numberOfGuesses++;
                     System.out.printf("You guessed correctly! Correct number was %d. It took you %d guesses.",
                             randomNumber, numberOfGuesses);
                     break;
