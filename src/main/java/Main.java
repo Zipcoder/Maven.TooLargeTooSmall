@@ -12,24 +12,24 @@ public class Main {
         int correctNum = rand.nextInt(10) +1;
 
         int giveNum = Integer.MIN_VALUE;
-        int tries = 0;
+        int tries = 1;
 
         Scanner num = new Scanner(System.in);
         System.out.println("Guess a number between 1 and 10");
         while (giveNum != correctNum) {
             String answer = num.nextLine();
             giveNum = Integer.parseInt(answer);
-            System.out.println("You guessed " + answer);
+            System.out.println("Your input was " + answer);
 
             if (giveNum == correctNum) {
                 System.out.println("Correct guess");
             }
             else if(giveNum > correctNum){
-                System.out.println("Too big");
+                System.out.println("Too big \n Try again");
                 tries++;
             }
             else if(giveNum < correctNum){
-                System.out.println("Too low");
+                System.out.println("Too low \n Try again");
                 tries++;
             }
         }
