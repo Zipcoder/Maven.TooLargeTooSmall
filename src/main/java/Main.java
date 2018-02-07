@@ -28,6 +28,7 @@ public class Main {
         while (i <= 0){
             System.out.println("Enter a whole number between 1 and 10: ");
             guess = input.nextInt();
+            counter++;
             if (guess == randNum) {
                 System.out.println("Congrats! You guessed the right number!");
                 i++;
@@ -41,7 +42,7 @@ public class Main {
             else{
                 System.out.println("ERROR!");
             }
-            counter++;
+           
             System.out.println();
             System.out.println();
         }
