@@ -6,24 +6,38 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-        int mysteryN = 7;
+
+        Scanner scanner = new Scanner(System.in);
+
+        int mysteryNumber = 7;
         int counter = 1;
+        boolean userIsGuessing = true;
 
-
-        Scanner gameTime = new Scanner(System.in);
         System.out.println("I'm thinking of a number between 1 and 10, what is it?");
-        int guessMe = gameTime.nextInt();
 
-        String answerBack = (guessMe > mysteryN) ? "Too large " + counter + "guess" : "Too small, " + counter + " guess";
-        System.out.println(answerBack);
+        while(userIsGuessing){
 
-        do () {
+            int guessNumber = scanner.nextInt();
+
+            if(mysteryNumber == guessNumber){
+                System.out.println("Correct! after only " + counter + " guess(es)");
+                break;
+            }
+            String answerBack = (guessNumber > mysteryNumber) ? "Too large " + counter + " guess" : "Too small, " + counter + " guess";
+            System.out.println(answerBack);
+
             counter++;
-//Enter ternary operator in loop and finish this thing!
-        }
-        System.out.println("Try again");
+            System.out.println("Try again");
+            }
 
 
-        }
+
+
+
+
+
+    }
+
+
     }
 
