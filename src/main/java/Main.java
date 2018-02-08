@@ -15,7 +15,9 @@ public class Main {
         int desiredInt = randomNum.nextInt(10) + 1;
         int count = 0;
 
-        while (true) {
+        boolean flag = false;
+
+        while (!flag) {
             int userResponse = input.nextInt();
             count++;
             if (userResponse > desiredInt) {
@@ -26,6 +28,7 @@ public class Main {
                 System.out.println("Congratulations! You just did something an untrained monkey could do.... " +
                         "But don't feel too badly. The monkey totally got it right on the first try and it" +
                         " only took you " + count + " tries.");
+                flag = true;
             }
 
         }
