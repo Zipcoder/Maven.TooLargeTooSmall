@@ -24,7 +24,7 @@ public class Main {
             int randomNumber = rand.nextInt(max) + min;
 
             int guessCount = 0;
-
+            int prevGuessedNumber= 0;
 
 
             while (keepGuessing) {
@@ -33,15 +33,20 @@ public class Main {
                     guessCount++;
                     keepGuessing = false;
 
-                }else if (guessedNumber < randomNumber) {
+                }else if (guessedNumber < randomNumber && guessedNumber != prevGuessedNumber) {
                     guessCount++;
+                    prevGuessedNumber = guessedNumber;
                     System.out.println("Your guess is too low!!!");
                     guessedNumber = getIntegerInput("Guess a number between: " + min + " & " + max);
 
-                }else if (guessedNumber > randomNumber) {
+                }else if (guessedNumber > randomNumber && guessedNumber != prevGuessedNumber) {
                     guessCount++;
+                    prevGuessedNumber = guessedNumber;
                     System.out.print("Your guess is too high!!!");
                     guessedNumber = getIntegerInput("Guess a number between: " + min + " & " + max);
+                }else if (guessedNumber == prevGuessedNumber){
+                    System.out.print("You have just guessed this value, please choose another value for your guess.");
+                    guessedNumber = getIntegerInput("\n" + "Guess a number between: " + min + " & " + max);
                 }
 
             }
