@@ -28,21 +28,19 @@ public class Main {
     }
 
     public static int getGuess(Scanner input, boolean firstPrompt, RandomNumber rand) {
-        int n = 0;
         if (firstPrompt)
         {
-            System.out.println("Guess an integer between " + rand.low + " and " + rand.high);
+            System.out.println("Guess an integer between " + rand.getLow() + " and " + rand.getHigh());
         }
         else {
-            System.out.println("Please enter an integer between " + rand.low + " and " + rand.high);
+            System.out.println("Please enter an integer between " + rand.getLow() + " and " + rand.getHigh());
         }
 
         String s = input.nextLine();
 
         if (isInteger(s))
         {
-            n = Integer.parseInt(s);
-            return n;
+            return Integer.parseInt(s);
         }
         else
         {
@@ -51,12 +49,12 @@ public class Main {
     }
 
     public static boolean isCorrect(int guess, RandomNumber rand, int guessNum) {
-        if (rand.n > guess)
+        if (rand.getN() > guess)
         {
             System.out.println("Too low");
             return false;
         }
-        else if (rand.n < guess)
+        else if (rand.getN() < guess)
         {
             System.out.println("Too high");
             return false;
@@ -90,9 +88,21 @@ public class Main {
 
 class RandomNumber
 {
-    public int low;
-    public int high;
-    public int n;
+    private int low;
+    private int high;
+    private int n;
+
+    public int getLow() {
+        return low;
+    }
+
+    public int getHigh() {
+        return high;
+    }
+
+    public int getN() {
+        return n;
+    }
 
     public RandomNumber(int bound) {
         Random rand = new Random();
